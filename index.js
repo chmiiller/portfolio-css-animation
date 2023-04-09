@@ -4,6 +4,7 @@ let nextPercentage = 0;
 
 window.onmousedown = e => {
   track.dataset.mouseDownAt = e.clientX;
+  track.style.cursor = 'grabbing';
 }
 
 window.onmousemove = e => {
@@ -24,10 +25,10 @@ window.onmousemove = e => {
   for (const image of images) {
     image.style.objectPosition = `${100 + nextPercentage}% center`;
   }
-  
 }
 
 window.onmouseup = e => {
   track.dataset.mouseDownAt = '0';
   track.dataset.mouseUpPercent = nextPercentage;
+  track.style.cursor = 'grab';
 }
